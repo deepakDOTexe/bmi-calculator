@@ -4,7 +4,7 @@ import 'card_content.dart';
 import 'reusable_card.dart';
 
 const bottomContainerHeight = 80.0;
-const ReusableCardColor = Color(0xFF1D1E33);
+const reusableCardColor = Color(0xFF1D1E33);
 const inactiveCardColor = Color(0xFF111328);
 const bottomContainerColor = Color(0xFFEB1555);
 
@@ -33,51 +33,47 @@ GenderType selectedGender;
             child: Row(
               children: <Widget>[
                 Expanded(
-                  child: GestureDetector(
-                    onTap: (){
+                  child: ReusableCard(
+                    onPress: (){
                       setState(() {
                         selectedGender = GenderType.male;
                       });
                     },
-                    child: ReusableCard(
-                      cardColor: selectedGender == GenderType.male ? ReusableCardColor : inactiveCardColor,
-                      cardChild: CardContentWidget(
-                        icon: FontAwesomeIcons.mars,
-                        text: 'MALE',
-                      ),
+                    cardColor: selectedGender == GenderType.male ? reusableCardColor : inactiveCardColor,
+                    cardChild: CardContentWidget(
+                      icon: FontAwesomeIcons.mars,
+                      text: 'MALE',
                     ),
                   ),
                 ),
                 Expanded(
-                  child: GestureDetector(
-                    onTap: (){
+                  child: ReusableCard(
+                    onPress: (){
                       setState(() {
                         selectedGender = GenderType.female;
                       });
                     },
-                    child: ReusableCard(
-                      cardColor: selectedGender == GenderType.female ? ReusableCardColor : inactiveCardColor,
-                      cardChild: CardContentWidget(
-                      icon: FontAwesomeIcons.venus,
-                      text: 'FEMALE',
-                    ),
-                    ),
+                    cardColor: selectedGender == GenderType.female ? reusableCardColor : inactiveCardColor,
+                    cardChild: CardContentWidget(
+                    icon: FontAwesomeIcons.venus,
+                    text: 'FEMALE',
+                  ),
                   ),
                 ),
               ],
             ),
           ),
           Expanded(
-            child: ReusableCard(cardColor: ReusableCardColor,),
+            child: ReusableCard(cardColor: reusableCardColor,),
           ),
           Expanded(
             child: Row(
               children: <Widget>[
                 Expanded(
-                  child: ReusableCard(cardColor: ReusableCardColor,),
+                  child: ReusableCard(cardColor: reusableCardColor,),
                 ),
                 Expanded(
-                  child: ReusableCard(cardColor: ReusableCardColor,),
+                  child: ReusableCard(cardColor: reusableCardColor,),
                 ),
               ],
             ),
